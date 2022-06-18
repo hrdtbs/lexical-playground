@@ -20,8 +20,6 @@ import { TRANSFORMERS } from "@lexical/markdown";
 import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 import CodeHighlightPlugin from "./plugins/CodeHighlightPlugin";
 import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
-import { EditorState } from "lexical/LexicalEditorState";
-import { LexicalEditor } from "lexical/LexicalEditor";
 
 import { $createLinkNode } from "@lexical/link";
 import { $createListItemNode, $createListNode } from "@lexical/list";
@@ -58,7 +56,7 @@ const editorConfig = {
 };
 
 /**
- * @param {{onChange?: (editorState: EditorState, editor: LexicalEditor) => void;}} props
+ * @param {{onChange?: (editorState: import("lexical/LexicalEditorState").EditorState, editor: import("lexical/LexicalEditor").LexicalEditor) => void;}} props
  */
 export default function RichEditor(props) {
   const { onChange } = props;
