@@ -38,7 +38,7 @@ const editorConfig = {
   // The editor theme
   theme: ExampleTheme,
   // Handling of errors during update
-  onError(error: Error) {
+  onError(error) {
     throw error;
   },
   // Any custom nodes go here
@@ -55,13 +55,13 @@ const editorConfig = {
     AutoLinkNode,
     LinkNode,
   ],
-} as const;
+};
 
-interface RichEditorProps {
-  onChange?: (editorState: EditorState, editor: LexicalEditor) => void;
-}
-
-export default function RichEditor({ onChange }: RichEditorProps) {
+/**
+ * @param {{onChange?: (editorState: EditorState, editor: LexicalEditor) => void;}} props
+ */
+export default function RichEditor(props) {
+  const { onChange } = props;
   function prepopulatedRichText() {
     const root = $getRoot();
     if (root.getFirstChild() === null) {
