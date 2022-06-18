@@ -144,7 +144,9 @@ export default function RichEditor(props) {
 
   const initialConfig = {
     ...editorConfig,
-    editorState: isBrowser ? prepopulatedRichText : null,
+    editorState: isBrowser
+      ? localStorage.getItem("rich-editor-state") || prepopulatedRichText
+      : null,
   };
   return (
     <LexicalComposer initialConfig={initialConfig}>

@@ -4,8 +4,8 @@ const IndexPage = () => {
   return (
     <div>
       <RichEditor
-        onChange={(state, editor) => {
-          console.log(state, editor);
+        onChange={(state) => {
+          localStorage.setItem("rich-editor-state", JSON.stringify(state));
         }}
       />
     </div>
