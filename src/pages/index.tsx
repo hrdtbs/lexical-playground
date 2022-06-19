@@ -3,7 +3,11 @@ import RichEditor from "../components/Editor/RichEditor";
 const IndexPage = () => {
   return (
     <div>
-      <RichEditor />
+      <RichEditor
+        onChange={(state, editor) => {
+          console.log(state, editor);
+        }}
+      />
     </div>
   );
 };
